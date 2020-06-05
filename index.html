@@ -6,8 +6,7 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.js"></script>
-	<script type="text/javascript" src="/js/slidetoggle.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script>
 
 </head>
 <body>
@@ -42,7 +41,7 @@
 			<div class="gift__padding">
 				<div class="slide__text">
 					<p>Все просто! На подарочной упаковке ДНК-теста указан временный логин и пароль, который защищен стираемой полосой.</p>
-					<p>Человеку, который получил ДНК-тест в подарок, нужно ввести временный логин и пароль на странице входа в личный кабинет <a href="lk.genotek.ru">lk.genotek.ru</a>. После этого ему будет предложено зарегистрироваться или указать данные уже зарегистрированного пользователя, ввести номер пробирки и вызвать курьера для доставки биоматериала в лабораторию.</p>
+					<p>Человеку, который получил ДНК-тест в подарок, нужно ввести временный логин и пароль на странице входа в личный кабинет <a href="https://lk.genotek.ru">lk.genotek.ru</a>. После этого ему будет предложено зарегистрироваться или указать данные уже зарегистрированного пользователя, ввести номер пробирки и вызвать курьера для доставки биоматериала в лабораторию.</p>
 					<p>Обратите внимание, что по умолчанию вы не получите доступ к результатам ДНК-теста того, кому вы подарили тест. Но вы можете попросить вашего близкого поделиться с вами результатами в его настройках профиля.</p>
 				</div>
 				<img src="img/box-personal.png">
@@ -68,12 +67,12 @@
 					<div class="login-box">
 					<form>
 					    <div class="user-box">
-					      <input type="text" name="" required="">
-					      <label>Логин</label>
+					      <input id="giftLog" type="text" name="login" required="">
+					      <label>Логин</label><div class="close close_log"></div>
 					    </div>
 					    <div class="user-box">
-					      <input type="password" name="" required="">
-					      <label>Пароль</label>
+					      <input id="giftPass" type="password" name="password" required="">
+					      <label>Пароль</label><div class="close close_pass"></div>
 					    </div>
 					    <a href="#">
 					      Активировать ДНК-тест
@@ -98,6 +97,13 @@
 	$( ".slide__two_text" ).slideToggle( "fast" );
 	$( ".slide__one_text" ).slideUp( "fast" );
 });
+	$( ".close_log" ).on('click', function() {
+		$("#giftLog").val('');
+	});
+
+	$( ".close_pass" ).on('click', function() {
+		$("#giftPass").val('');
+	});
 </script>
 </body>
 </html>
